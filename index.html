@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <h1>Rock scissors paper</h1>
+        <h2>please check the output in console</h2>
+        <meta charset="UTF-8"/>
+    </head>
+<body>
+    <script>
+function computerplay()
+{
+    compselect = [ 'rock', 'paper', 'scissors' ];
+    return compselect[Math.floor(Math.random() * compselect.length)]
+}
+function finalwinner()
+{   
+    
+    let playermarks=0;
+    let computermarks=0;
+    for(i=1;i<6;i++)
+    {
+        
+        
+            let x = prompt("Enter your choice from 'rock','scissors' and 'paper'");
+            x = x.toLowerCase();
+            console.log("your choice was " + x)
+            let y = computerplay();
+            y= y.toLowerCase();
+            console.log("computer choice was " + y)
+            if ((x === "rock" && y === "paper")||
+                (x ===  "paper" && y === "scissors")||
+                (x === "scissors" && y === "rock")
+                )
+            { 
+                computermarks= computermarks+1;
+                console.log( "you loose "+i+" game")
+        
+            }
+            else if((x== 'rock' && y== 'rock')||
+                    (x== 'paper' && y== 'paper')||
+                     (x== 'scissors' && y== 'scissors')
+                    )
+                {
+                    console.log( "you tie "+i+" game")
+                }
+            else if((x== 'rock' && y== 'scissors')||
+                    (x== 'paper' && y== 'rock')||
+                    (x== 'scissors' && y== 'paper')
+                    )
+                {
+                    playermarks = playermarks+1;
+                    console.log( "you won "+i+" game")
+                    
+                }
+            else
+                {
+                    console.log("please enter a valid input")
+                }
+        
+        
+        console.log("Total player marks till now are " + playermarks)
+        console.log("Total computer marks till now are " + computermarks)
+        }
+        console.log("your total score is "+ playermarks)
+        console.log("computer's total score is "+ computermarks)
+
+      if(playermarks > computermarks)
+        {
+           return "FINAL RESULT : you are the final winner ";
+        }
+    else if(playermarks==computermarks)
+        {
+            return "FINAL RESULT : you tie with the computer";
+        }
+    else
+        {
+            return "FINAL RESULT : sorry you loose to the computer";
+        }
+    }
+
+console.log(finalwinner())
+
+</script>
+</body>
+</html>
